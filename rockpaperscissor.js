@@ -29,6 +29,8 @@ function getUserChoice() {
       return "paper";
     case 3:
       return "scissor";
+    default:
+      return "nothing";
   }
 }
 // declare score
@@ -43,7 +45,10 @@ function playRound(computer, user) {
   } else if (
     (computer == "rock" && user == "paper") ||
     (computer == "scissor" && user == "paper") ||
-    (computer == "paper" && user == "rock")
+    (computer == "paper" && user == "rock") ||
+    user != "rock" ||
+    user != "paper" ||
+    user != "scissor"
   ) {
     console.log(`You lose! ${computer} beat ${user}`);
     computerScore++;
@@ -75,4 +80,4 @@ function playGame() {
   }
 }
 
-playGame()
+playGame();
